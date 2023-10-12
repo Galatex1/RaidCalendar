@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tagscrollbar::-webkit-scrollbar {
+    margin: 10px 0px;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+/* Track */
+.tagscrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Handle */
+.tagscrollbar::-webkit-scrollbar-thumb {
+    @apply bg-app-button/80;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+/* Handle on hover */
+.tagscrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-app-button;
+    cursor: pointer;
+}
+
+.tagscrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-app-button;
+}
+
+
+
