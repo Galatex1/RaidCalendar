@@ -138,7 +138,7 @@ function Calendar() {
   useEffect(() => {
     if (activeServers)
       localStorage.setItem('active_servers', JSON.stringify(activeServers));
-    // loadEvents();
+    loadEvents();
   }, [activeServers])
 
   useEffect(() => {
