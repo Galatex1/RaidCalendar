@@ -12,7 +12,7 @@
     # Node env that will be used for build phase.
     build_phase_node_env: # optional, default is production
     # Your preference of package manager: 'npm' and 'yarn' are possible values.
-    package_manager: # optional, default is npm
+    package_manager: yarn # optional, default is npm
     # Desired name for the Deployment environment. It is also the exposed artifact name which contains the build output (dist).
     artifact_name: # optional, default is github-pages
     # Controls the debug mode, boolean, true is for on. When turned on, it'll output certain information on certain steps. Mainly used for development, but use it as you please to inspect your env and variables.
