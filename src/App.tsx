@@ -63,7 +63,7 @@ function App() {
     setUser(null);
   }
 
-  let redirect_uri = `https://discord.com/api/oauth2/authorize?client_id=1162065374561443962&redirect_uri=${encodeURI(location.href)}&response_type=token&scope=guilds%20identify`;
+  let redirect_uri = `https://discord.com/api/oauth2/authorize?client_id=1162065374561443962&redirect_uri=${encodeURI(/* location.href */"https://galatex1.github.io/RaidCalendar")}&response_type=token&scope=guilds%20identify`;
 
   useEffect(() => {
     if (!token) {
@@ -84,6 +84,7 @@ function App() {
   }, [])
 
   useEffect(() => {
+    console.log(token);
     if (token)
       loadUser();
   }, [token])

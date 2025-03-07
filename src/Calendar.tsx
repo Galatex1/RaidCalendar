@@ -75,12 +75,24 @@ function Calendar() {
       setLoading(true);
       for await (const serverid of server_ids) {
 
-        let { data } = await axios.post('https://corsproxy.io/?' + encodeURIComponent('https://raid-helper.dev/api/events/'), { accessToken: "U2FsdGVkX1/Yg/+RpLM3/rde/K1tPhdcqzYJOO91pTokMUuEh4xh3lYbelQxA6/V", serverid: serverid, IncludeSignUps: true }, {
+        // let { data } = await axios.post('https://corsproxy.io/?' + encodeURIComponent('https://raid-helper.dev/api/events/'), { accessToken: "U2FsdGVkX1/Yg/+RpLM3/rde/K1tPhdcqzYJOO91pTokMUuEh4xh3lYbelQxA6/V", serverid: serverid, IncludeSignUps: true }, {
+        //   headers: {
+        //     'Accept': 'application/json, text/plain, */*',
+        //     'Content-Type': 'application/json',
+        //   }
+        // });
+
+        let { data } = await axios.post(`https://raid-helper.dev/api/events/`, {
+          accessToken: "U2FsdGVkX1/Yg/+RpLM3/rde/K1tPhdcqzYJOO91pTokMUuEh4xh3lYbelQxA6/V",
+          serverid: serverid,
+          IncludeSignUps: true
+        }, {
           headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json',
           }
         });
+        console.log(data);
         _servers = [..._servers, data];
 
       }
@@ -162,7 +174,7 @@ function Calendar() {
 
   return (
 
-    <div className='h-screen w-full bg-slate-900 flex flex-col text-white font-sans pt-0 relative overflow-hidden bg-blend-multiply items-stretch' style={{backgroundImage: `url(${bg})`, backgroundSize: 'cover'}}>
+    <div className='h-screen w-full bg-slate-900 flex flex-col text-white font-sans pt-0 relative overflow-hidden bg-blend-multiply items-stretch' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }}>
       {/* <img className='absolute w-full h-full bg-cover mix-blend-overlay z-0' src={bg} alt="background" /> */}
       <div className='w-full flex flex-grow overflow-hidden'>
         <div className='w-[200px] flex-shrink-0 h-full bg-gray-950/80  border-r border-gray-900 flex flex-col justify-between gap-2px overflow-y-auto tagscrollbar pt-16px'>
